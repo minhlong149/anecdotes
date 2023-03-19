@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { About } from "./components/About";
+import { Anecdote } from "./components/Anecdote";
 import { AnecdoteList } from "./components/AnecdoteList";
 import { CreateNew } from "./components/CreateNew";
 import { Footer } from "./components/Footer";
@@ -51,6 +52,10 @@ const App = () => {
         <Menu />
         <Routes>
           <Route path="/" element={<AnecdoteList anecdotes={anecdotes} />} />
+          <Route
+            path="/anecdotes/:id"
+            element={<Anecdote anecdotes={anecdotes} />}
+          />
           <Route path="/about" element={<About />} />
           <Route path="/create" element={<CreateNew addNew={addNew} />} />
         </Routes>
